@@ -10,6 +10,9 @@ module.exports = {
 			fontFamily: {
 				roboto: ["Roboto", "sans-serif"],
 			},
+			colors: {
+				mainBgColor: "#0E1217",
+			},
 		},
 	},
 	plugins: [],

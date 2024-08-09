@@ -7,7 +7,6 @@
 :root{
     --main-bg-color: #0E1217;
     --main-text: whitesmoke;
-    --gradient-bg: 
 }
 
 *{
@@ -26,4 +25,5 @@ body{
     background-image: linear-gradient(var(--main-bg-color), var(--main-bg-color)), linear-gradient(to right, #a855f7, #ec4899, #ef4444);
     background-origin: border-box;
     background-clip: padding-box, border-box;
-  }
+}
+  
