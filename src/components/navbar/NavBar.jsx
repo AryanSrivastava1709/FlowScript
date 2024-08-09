@@ -21,7 +21,7 @@ function NavBar() {
 				<button onClick={() => setIsMenuOpen((prev) => !prev)}>Menu</button>
 			</div>
 			{isMenuOpen && (
-				<div className='h-screen  mt-10 absolute right-0 top-0 overflow-hidden lg:hidden w-1/2'>
+				<div className='h-screen  mt-10 absolute right-0 top-0 overflow-hidden lg:hidden w-1/2 z-10'>
 					<Links direction='vertical' />
 				</div>
 			)}
