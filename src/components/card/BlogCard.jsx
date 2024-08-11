@@ -7,7 +7,7 @@ function BlogCard({ post }) {
 		<div className='border border-gray-800 rounded-lg shadow-lg w-full sm:w-80 overflow-hidden bg-gray-900 transition-transform transform hover:-translate-y-2 hover:shadow-2xl hover:border-gray-400'>
 			<div className='relative h-48 w-full'>
 				<Image
-					src='/hero.png'
+					src={post?.img}
 					alt='blog'
 					layout='fill'
 					objectFit='cover'
