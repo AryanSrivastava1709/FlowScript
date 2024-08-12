@@ -50,7 +50,8 @@ function SingleBlogPageClient({ blog }) {
 						{blog.title}
 					</h1>
 					<p className='text-gray-300 mb-6'>
-						By {blog.username} on {formattedDate}
+						By <Link href={`/${blog.username}`}>{blog.username}</Link> on{" "}
+						{formattedDate}
 					</p>
 					<div className='text-lg leading-relaxed mb-6 text-gray-100'>
 						{blog.desc}
