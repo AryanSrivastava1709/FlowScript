@@ -3,6 +3,11 @@ import { getPostsByUser } from "@/lib/controllers/postController";
 import { getUser } from "@/lib/controllers/userController";
 import React from "react";
 
+export const metadata = {
+	title: "Profile",
+	description: "Profile page",
+};
+
 async function ProfilePage({ params }) {
 	const { slug } = params;
 	let user = {};
