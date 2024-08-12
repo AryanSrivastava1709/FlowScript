@@ -7,7 +7,7 @@ export const getPosts = async () => {
 		const posts = await Post.find();
 		return posts;
 	} catch (err) {
-		console.log(err);
+		console.error(err);
 		throw new Error("Error getting posts!😢");
 	}
 };
@@ -18,7 +18,7 @@ export const getPost = async (slug) => {
 		const post = await Post.findOne({ slug });
 		return post;
 	} catch (error) {
-		console.log(error);
+		console.errpr(error);
 		throw new Error("Failed to fetch post!😢");
 	}
 };

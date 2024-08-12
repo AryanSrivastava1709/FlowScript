@@ -1,6 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
+export const metadata = {
+	title: "About",
+	description: "Learn more about our mission, story, and what we offer.",
+};
+
 function About() {
 	return (
 		<div className='font-roboto p-4 sm:p-6 md:p-8 lg:p-10'>
