@@ -2,16 +2,23 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { toast } from "react-hot-toast";
 
 function SingleBlogPageClient({ blog }) {
 	const [isClient, setIsClient] = useState(false);
-	console.log(blog);
+	const [loading, setLoading] = useState(true);
+
 	useEffect(() => {
 		setIsClient(true);
 		if (!blog || blog.length === 0) {
 			toast.error("No blog found! Something went wrong.");
 		}
+		setLoading(false);
 	}, [blog]);
+
+	if (loading) {
+		return <div>Loading...</div>;
+	}
 
 	const formattedDate = new Date(blog.createdAt).toLocaleDateString("en-GB", {
 		day: "2-digit",
