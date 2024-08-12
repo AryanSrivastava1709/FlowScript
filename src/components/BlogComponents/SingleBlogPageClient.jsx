@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { toast } from "react-hot-toast";
+import User from "@/lib/models/userModel";
 
-function SingleBlogPageClient({ blog }) {
+function SingleBlogPageClient({ blog, user }) {
 	const [isClient, setIsClient] = useState(false);
 	const [loading, setLoading] = useState(true);
 
@@ -13,9 +14,11 @@ function SingleBlogPageClient({ blog }) {
 		if (!blog || blog.length === 0) {
 			toast.error("No blog found! Something went wrong.");
 		}
+		if (!user || user.length === 0) {
+			toast.error("No user found! Something went wrong.");
+		}
 		setLoading(false);
-	}, [blog]);
-
+	}, [blog, user]);
 	if (loading) {
 		return <div>Loading...</div>;
 	}
@@ -49,10 +52,24 @@ function SingleBlogPageClient({ blog }) {
 					<h1 className='text-4xl md:text-5xl font-extrabold mb-4 text-white'>
 						{blog.title}
 					</h1>
-					<p className='text-gray-300 mb-6'>
-						By <Link href={`/${blog.username}`}>{blog.username}</Link> on{" "}
-						{formattedDate}
-					</p>
+					<div className='flex items-center mb-6'>
+						<div className='relative w-12 h-12 mr-4'>
+							<Image
+								src={user.img}
+								alt='user image'
+								layout='fill'
+								objectFit='cover'
+								priority
+								className='rounded-full border border-gray-200'
+							/>
+						</div>
+						<div className='bg-gray-800 bg-opacity-50 p-2 rounded-lg'>
+							<Link href={`/${blog.username}`}>
+								<span className='text-white'>{blog.username}</span>
+							</Link>
+							<span className='text-gray-400 ml-2'>on {formattedDate}</span>
+						</div>
+					</div>
 					<div className='text-lg leading-relaxed mb-6 text-gray-100'>
 						{blog.desc}
 					</div>

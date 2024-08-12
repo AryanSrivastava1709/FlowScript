@@ -12,10 +12,10 @@ export const getUsers = async () => {
 	}
 };
 
-export const getUserById = async (id) => {
+export const getUser = async (username) => {
 	try {
 		connectToDatabase();
-		const user = await User.findById(id);
+		const user = await User.findOne({ username });
 		return user;
 	} catch (error) {
 		console.log(error);

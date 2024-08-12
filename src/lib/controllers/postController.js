@@ -18,7 +18,18 @@ export const getPost = async (slug) => {
 		const post = await Post.findOne({ slug });
 		return post;
 	} catch (error) {
-		console.errpr(error);
+		console.error(error);
 		throw new Error("Failed to fetch post!😢");
+	}
+};
+
+export const getPostsByUser = async (username) => {
+	try {
+		await connectToDatabase();
+		const posts = await Post.find({ username });
+		return posts;
+	} catch (error) {
+		console.error(error);
+		throw new Error("Failed to fetch posts!😢");
 	}
 };

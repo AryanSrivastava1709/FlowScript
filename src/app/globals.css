@@ -9,6 +9,28 @@
     --main-text: whitesmoke;
 }
 
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0E1217;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #3B82F6; /* Fluorescent blue */
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #60A5FA; /* Slightly brighter blue on hover */
+}
+
 *{
     margin: 0;
     padding: 0;
